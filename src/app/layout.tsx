@@ -1,12 +1,12 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Geist, Figtree } from "next/font/google";
+import { Geist, Raleway } from "next/font/google";
 
-import { TRPCReactProvider } from "~/trpc/react";
 import { cn } from "~/lib/utils";
+import { TRPCReactProvider } from "~/trpc/react";
 
-const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
+const raleway = Raleway({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -23,7 +23,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cn(geist.variable, "font-sans", figtree.variable)}>
+    <html
+      lang="en"
+      className={cn(geist.variable, "font-sans", raleway.variable)}
+    >
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>

@@ -20,6 +20,8 @@ export const categoryEnum = pgEnum("category", [
   "THANKFUL",
 ]);
 
+export type Category = (typeof categoryEnum.enumValues)[number];
+
 export const posts = createTable(
   "post",
   (d) => ({
@@ -51,3 +53,5 @@ export const quranVerses = createTable(
   }),
   (t) => [index("verse_idx").on(t.verse)],
 );
+
+export type QuranVerse = typeof quranVerses.$inferSelect;
