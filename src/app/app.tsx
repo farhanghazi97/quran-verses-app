@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Spinner } from "~/components/ui/spinner";
 import { Heading } from "~/components/ui/typography";
@@ -74,7 +74,12 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-8">
-      <div className="flex max-w-[200px] flex-col items-center justify-center gap-1 md:max-w-full md:flex-row">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="flex max-w-[200px] flex-col items-center justify-center gap-1 md:max-w-full md:flex-row"
+      >
         <Heading variant="h3" className="shrink-0 text-xl font-bold">
           If you&apos;re feeling
         </Heading>
@@ -82,7 +87,7 @@ const App = () => {
         <Heading variant="h3" className="shrink-0 text-xl font-bold">
           there&apos;s a verse in the Quran just for you.
         </Heading>
-      </div>
+      </motion.div>
       {randomVerse && (
         <Verse verse={randomVerse} selectedCategory={currentCategory} />
       )}
