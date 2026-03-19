@@ -7,8 +7,8 @@ const typewriterOptions: Options = {
   strings: ["Anxious,", "Lonely,", "Thankful,", "Sad,", "Angry,"],
   autoStart: true,
   loop: true,
-  wrapperClassName: "text-xl font-bold",
-  cursorClassName: "text-xl",
+  wrapperClassName: "text-xl md:text-2xl font-bold",
+  cursorClassName: "text-xl md:text-2xl",
 };
 
 const HeroSection = ({ selectedCategory }: { selectedCategory: Category }) => {

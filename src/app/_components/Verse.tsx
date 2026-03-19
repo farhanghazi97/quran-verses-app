@@ -47,7 +47,7 @@ const Verse = ({
           >{`"${verse.verse}"`}</Heading>
         </motion.div>
       </div>
-      <Paragraph className="px-14 text-end md:px-0">{`${verse.chapterName}, ${verse.chapterNumber}:${verse.verseNumber}`}</Paragraph>
+      <Paragraph className="px-14 text-end font-bold md:px-0">{`${verse.chapterName}, ${verse.chapterNumber}:${verse.verseNumber}`}</Paragraph>
     </div>
   );
 };

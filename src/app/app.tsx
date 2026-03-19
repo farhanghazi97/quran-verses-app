@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Spinner } from "~/components/ui/spinner";
+import { Heading } from "~/components/ui/typography";
 import {
   categoryEnum,
   type Category,
@@ -13,6 +14,11 @@ import HeroSection from "./_components/Hero";
 import Verse from "./_components/Verse";
 
 const App = () => {
+  // const { data: seedVerses } = api.excel.seedVerses.useQuery({
+  //   filename: "Quran Verses.xlsx",
+  // });
+  // console.log(seedVerses);
+
   const [category, setCategory] = useState<Category | null>(null);
   const [randomVerse, setRandomVerse] = useState<QuranVerse | null>(null);
   const [verseRefreshKey, setVerseRefreshKey] = useState(0);
@@ -69,11 +75,13 @@ const App = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-8">
       <div className="flex max-w-[200px] flex-col items-center justify-center gap-1 md:max-w-full md:flex-row">
-        <h1 className="shrink-0 text-xl font-bold">If you&apos;re feeling</h1>
+        <Heading variant="h3" className="shrink-0 text-xl font-bold">
+          If you&apos;re feeling
+        </Heading>
         <HeroSection selectedCategory={currentCategory} />
-        <h1 className="shrink-0 text-xl font-bold">
+        <Heading variant="h3" className="shrink-0 text-xl font-bold">
           there&apos;s a verse in the Quran just for you.
-        </h1>
+        </Heading>
       </div>
       {randomVerse && (
         <Verse verse={randomVerse} selectedCategory={currentCategory} />
